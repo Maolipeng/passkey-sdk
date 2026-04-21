@@ -11,9 +11,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@passkey/browser-sdk": "workspace:*",
-    "@passkey/server-sdk": "workspace:*",
-    "@passkey/sdk-core": "workspace:*",
+    "@maolipeng/passkey-browser-sdk": "workspace:*",
+    "@maolipeng/passkey-server-sdk": "workspace:*",
+    "@maolipeng/passkey-sdk-core": "workspace:*",
     "cors": "^2.8.5",
     "express": "^4.21.2"
   },

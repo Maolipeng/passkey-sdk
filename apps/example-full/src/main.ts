@@ -10,7 +10,7 @@
  * - 统计追踪
  */
 
-import { PasskeyClient, type PasskeyEnvironment } from '@passkey/browser-sdk'
+import { PasskeyClient, type PasskeyEnvironment } from '@maolipeng/passkey-browser-sdk'
 
 // ============================================================================
 // 统计追踪

@@ -1,13 +1,17 @@
 {
-  "name": "@passkey/browser-sdk",
+  "name": "@maolipeng/passkey-browser-sdk",
   "version": "1.0.0",
   "description": "Passkey 前端 SDK - WebAuthn browser client with event hooks and debug mode",
-  "author": "",
+  "author": "Maolipeng<m384861046@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/example/passkey-sdk",
+    "url": "git+https://github.com/Maolipeng/passkey-sdk.git",
     "directory": "packages/passkey-browser-sdk"
+  },
+  "homepage": "https://github.com/Maolipeng/passkey-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/Maolipeng/passkey-sdk/issues"
   },
   "keywords": [
     "passkey",
@@ -28,6 +32,9 @@
       "require": "./dist/index.cjs"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": ["dist"],
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
@@ -35,7 +42,7 @@
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch"
   },
   "dependencies": {
-    "@passkey/sdk-core": "workspace:*",
+    "@maolipeng/passkey-sdk-core": "workspace:*",
     "@simplewebauthn/browser": "^13.1.0"
   },
   "devDependencies": {

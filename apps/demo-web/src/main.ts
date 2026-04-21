@@ -1,4 +1,4 @@
-import { PasskeyClient } from '@passkey/browser-sdk'
+import { PasskeyClient } from '@maolipeng/passkey-browser-sdk'
 
 const logEl = document.querySelector('#log')
 const envEl = document.querySelector('#env')

@@ -8,10 +8,10 @@ TypeScript Passkey/WebAuthn SDK monorepo. It provides a browser client, an Expre
 
 | Package | Purpose |
 | --- | --- |
-| `@passkey/sdk-core` | Shared TypeScript types and SDK error classes |
-| `@passkey/browser-sdk` | Browser `PasskeyClient` built on `@simplewebauthn/browser` |
-| `@passkey/server-sdk` | Server `PasskeyServer` built on `@simplewebauthn/server` |
-| `@passkey/server-sdk/storages` | Memory storage plus SQLite/Redis base storage helpers |
+| `@maolipeng/passkey-sdk-core` | Shared TypeScript types and SDK error classes |
+| `@maolipeng/passkey-browser-sdk` | Browser `PasskeyClient` built on `@simplewebauthn/browser` |
+| `@maolipeng/passkey-server-sdk` | Server `PasskeyServer` built on `@simplewebauthn/server` |
+| `@maolipeng/passkey-server-sdk/storages` | Memory storage plus SQLite/Redis base storage helpers |
 
 All SDK packages build to ESM and CommonJS with generated `.d.ts` files.
 
@@ -84,7 +84,7 @@ pnpm dev:web
 ## Browser Usage
 
 ```typescript
-import { PasskeyClient } from '@passkey/browser-sdk'
+import { PasskeyClient } from '@maolipeng/passkey-browser-sdk'
 
 const client = new PasskeyClient(
   {
@@ -126,11 +126,11 @@ const discoverableLogin = await client.login()
 
 ```typescript
 import express from 'express'
-import { PasskeyServer } from '@passkey/server-sdk'
+import { PasskeyServer } from '@maolipeng/passkey-server-sdk'
 import {
   MemoryChallengeStorage,
   MemoryUserStorage,
-} from '@passkey/server-sdk/storages'
+} from '@maolipeng/passkey-server-sdk/storages'
 
 const app = express()
 
@@ -217,7 +217,7 @@ import {
   MemoryUserStorage,
   RedisChallengeStorageBase,
   SQLiteUserStorageBase,
-} from '@passkey/server-sdk/storages'
+} from '@maolipeng/passkey-server-sdk/storages'
 ```
 
 Implemented helpers:
@@ -235,7 +235,7 @@ SQLite example:
 
 ```typescript
 import Database from 'better-sqlite3'
-import { SQLiteUserStorageBase } from '@passkey/server-sdk/storages'
+import { SQLiteUserStorageBase } from '@maolipeng/passkey-server-sdk/storages'
 
 const db = new Database('./passkeys.db')
 const userStorage = new SQLiteUserStorageBase(db)
@@ -245,7 +245,7 @@ Redis example:
 
 ```typescript
 import Redis from 'ioredis'
-import { RedisChallengeStorageBase } from '@passkey/server-sdk/storages'
+import { RedisChallengeStorageBase } from '@maolipeng/passkey-server-sdk/storages'
 
 const redis = new Redis('redis://localhost:6379')
 const challengeStorage = new RedisChallengeStorageBase(redis, 60000)
@@ -300,7 +300,7 @@ Note: `authenticatorSelection` exists in the shared type today, but current serv
 
 ## Error Types
 
-Shared errors are exported from `@passkey/sdk-core` and re-exported by the browser/server packages:
+Shared errors are exported from `@maolipeng/passkey-sdk-core` and re-exported by the browser/server packages:
 
 ```typescript
 import {
@@ -316,7 +316,7 @@ import {
   PasskeyStorageError,
   PasskeyUserCancelledError,
   PasskeyUserNotFoundError,
-} from '@passkey/sdk-core'
+} from '@maolipeng/passkey-sdk-core'
 ```
 
 ## Repository Layout

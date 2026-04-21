@@ -10,9 +10,9 @@
 
 import express from 'express'
 import cors from 'cors'
-import { PasskeyServer } from '@passkey/server-sdk'
-import { MemoryUserStorage, MemoryChallengeStorage } from '@passkey/server-sdk/storages'
-import { type PasskeyServerConfig, type UserStorageAdapter, type ChallengeStorageAdapter } from '@passkey/sdk-core'
+import { PasskeyServer } from '@maolipeng/passkey-server-sdk'
+import { MemoryUserStorage, MemoryChallengeStorage } from '@maolipeng/passkey-server-sdk/storages'
+import { type PasskeyServerConfig, type UserStorageAdapter, type ChallengeStorageAdapter } from '@maolipeng/passkey-sdk-core'
 
 const app = express()
 const PORT = Number(process.env.PORT ?? 3002)

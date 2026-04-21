@@ -8,7 +8,7 @@ import {
   PasskeyError,
   PasskeyInvalidUsernameError,
   PasskeyApiError,
-} from '@passkey/sdk-core'
+} from '@maolipeng/passkey-sdk-core'
 import {
   startRegistration,
   startAuthentication,
@@ -265,4 +265,4 @@ export class PasskeyClient {
 }
 
 // 导出所有核心类型
-export * from '@passkey/sdk-core'
+export * from '@maolipeng/passkey-sdk-core'

@@ -3,7 +3,7 @@ import {
   type ChallengeStorageAdapter,
   type User,
   type StoredCredential,
-} from '@passkey/sdk-core'
+} from '@maolipeng/passkey-sdk-core'
 
 // ============================================================================
 // 内存存储（开发用）
@@ -375,4 +375,4 @@ export abstract class RedisChallengeStorageBase implements ChallengeStorageAdapt
 }
 
 // 导出所有类型
-export * from '@passkey/sdk-core'
+export * from '@maolipeng/passkey-sdk-core'

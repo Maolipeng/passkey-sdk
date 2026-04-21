@@ -1,13 +1,17 @@
 {
-  "name": "@passkey/server-sdk",
+  "name": "@maolipeng/passkey-server-sdk",
   "version": "1.0.0",
   "description": "Passkey 后端 SDK - WebAuthn server with Express router and configurable storage adapters",
-  "author": "",
+  "author": "Maolipeng<m384861046@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/example/passkey-sdk",
+    "url": "git+https://github.com/Maolipeng/passkey-sdk.git",
     "directory": "packages/passkey-server-sdk"
+  },
+  "homepage": "https://github.com/Maolipeng/passkey-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/Maolipeng/passkey-sdk/issues"
   },
   "keywords": [
     "passkey",
@@ -33,6 +37,9 @@
       "require": "./dist/storages/index.cjs"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": ["dist"],
   "scripts": {
     "build": "tsup src/index.ts src/storages/index.ts --format cjs,esm --dts",
@@ -40,7 +47,7 @@
     "dev": "tsup src/index.ts src/storages/index.ts --format cjs,esm --dts --watch"
   },
   "dependencies": {
-    "@passkey/sdk-core": "workspace:*",
+    "@maolipeng/passkey-sdk-core": "workspace:*",
     "@simplewebauthn/server": "^13.1.0",
     "express": "^4.21.2"
   },

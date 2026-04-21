@@ -8,10 +8,10 @@ TypeScript Passkey/WebAuthn SDK monorepo，提供浏览器客户端、兼容 Exp
 
 | 包 | 作用 |
 | --- | --- |
-| `@passkey/sdk-core` | 共享 TypeScript 类型和 SDK 错误类 |
-| `@passkey/browser-sdk` | 基于 `@simplewebauthn/browser` 的浏览器端 `PasskeyClient` |
-| `@passkey/server-sdk` | 基于 `@simplewebauthn/server` 的服务端 `PasskeyServer` |
-| `@passkey/server-sdk/storages` | 内存存储，以及 SQLite/Redis 存储基础类 |
+| `@maolipeng/passkey-sdk-core` | 共享 TypeScript 类型和 SDK 错误类 |
+| `@maolipeng/passkey-browser-sdk` | 基于 `@simplewebauthn/browser` 的浏览器端 `PasskeyClient` |
+| `@maolipeng/passkey-server-sdk` | 基于 `@simplewebauthn/server` 的服务端 `PasskeyServer` |
+| `@maolipeng/passkey-server-sdk/storages` | 内存存储，以及 SQLite/Redis 存储基础类 |
 
 所有 SDK 包都会构建为 ESM 和 CommonJS，并生成 `.d.ts` 类型声明文件。
 
@@ -84,7 +84,7 @@ pnpm dev:web
 ## 浏览器端用法
 
 ```typescript
-import { PasskeyClient } from '@passkey/browser-sdk'
+import { PasskeyClient } from '@maolipeng/passkey-browser-sdk'
 
 const client = new PasskeyClient(
   {
@@ -126,11 +126,11 @@ const discoverableLogin = await client.login()
 
 ```typescript
 import express from 'express'
-import { PasskeyServer } from '@passkey/server-sdk'
+import { PasskeyServer } from '@maolipeng/passkey-server-sdk'
 import {
   MemoryChallengeStorage,
   MemoryUserStorage,
-} from '@passkey/server-sdk/storages'
+} from '@maolipeng/passkey-server-sdk/storages'
 
 const app = express()
 
@@ -217,7 +217,7 @@ import {
   MemoryUserStorage,
   RedisChallengeStorageBase,
   SQLiteUserStorageBase,
-} from '@passkey/server-sdk/storages'
+} from '@maolipeng/passkey-server-sdk/storages'
 ```
 
 已实现的辅助类：
@@ -235,7 +235,7 @@ SQLite 示例：
 
 ```typescript
 import Database from 'better-sqlite3'
-import { SQLiteUserStorageBase } from '@passkey/server-sdk/storages'
+import { SQLiteUserStorageBase } from '@maolipeng/passkey-server-sdk/storages'
 
 const db = new Database('./passkeys.db')
 const userStorage = new SQLiteUserStorageBase(db)
@@ -245,7 +245,7 @@ Redis 示例：
 
 ```typescript
 import Redis from 'ioredis'
-import { RedisChallengeStorageBase } from '@passkey/server-sdk/storages'
+import { RedisChallengeStorageBase } from '@maolipeng/passkey-server-sdk/storages'
 
 const redis = new Redis('redis://localhost:6379')
 const challengeStorage = new RedisChallengeStorageBase(redis, 60000)
@@ -300,7 +300,7 @@ const challengeStorage = new RedisChallengeStorageBase(redis, 60000)
 
 ## 错误类型
 
-共享错误从 `@passkey/sdk-core` 导出，并由 browser/server 包重新导出：
+共享错误从 `@maolipeng/passkey-sdk-core` 导出，并由 browser/server 包重新导出：
 
 ```typescript
 import {
@@ -316,7 +316,7 @@ import {
   PasskeyStorageError,
   PasskeyUserCancelledError,
   PasskeyUserNotFoundError,
-} from '@passkey/sdk-core'
+} from '@maolipeng/passkey-sdk-core'
 ```
 
 ## 仓库结构

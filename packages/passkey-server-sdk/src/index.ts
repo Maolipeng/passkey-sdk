@@ -8,7 +8,7 @@ import {
   PasskeyUserNotFoundError,
   PasskeyCredentialNotFoundError,
   PasskeyInvalidChallengeError,
-} from '@passkey/sdk-core'
+} from '@maolipeng/passkey-sdk-core'
 import {
   generateRegistrationOptions,
   verifyRegistrationResponse,
@@ -377,4 +377,4 @@ export class PasskeyServer {
 }
 
 // 导出所有核心类型
-export * from '@passkey/sdk-core'
+export * from '@maolipeng/passkey-sdk-core'

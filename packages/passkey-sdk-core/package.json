@@ -1,13 +1,17 @@
 {
-  "name": "@passkey/sdk-core",
+  "name": "@maolipeng/passkey-sdk-core",
   "version": "1.0.0",
   "description": "Passkey SDK 核心类型定义 - TypeScript types, interfaces, and error classes",
-  "author": "",
+  "author": "Maolipeng<m384861046@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/example/passkey-sdk",
+    "url": "git+https://github.com/Maolipeng/passkey-sdk.git",
     "directory": "packages/passkey-sdk-core"
+  },
+  "homepage": "https://github.com/Maolipeng/passkey-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/Maolipeng/passkey-sdk/issues"
   },
   "keywords": [
     "passkey",
@@ -26,6 +30,9 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "files": ["dist"],
   "scripts": {

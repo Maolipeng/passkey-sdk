@@ -1,12 +1,17 @@
 {
   "name": "passkey-sdk-monorepo",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "author": "Maolipeng<m384861046@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/example/passkey-sdk"
+    "url": "git+https://github.com/Maolipeng/passkey-sdk.git"
+  },
+  "homepage": "https://github.com/Maolipeng/passkey-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/Maolipeng/passkey-sdk/issues"
   },
   "scripts": {
     "dev": "turbo dev",

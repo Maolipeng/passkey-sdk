@@ -8,7 +8,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@passkey/browser-sdk": "workspace:*"
+    "@maolipeng/passkey-browser-sdk": "workspace:*"
   },
   "devDependencies": {
     "vite": "^7.1.12"
