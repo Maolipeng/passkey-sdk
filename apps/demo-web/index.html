@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passkey 无坑版 Demo</title>
+    <script type="module" src="/src/main.ts"></script>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #0b1020;
+      }
+      .card {
+        width: min(640px, calc(100vw - 32px));
+        box-sizing: border-box;
+        padding: 24px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.94);
+        color: #111827;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      }
+      h1 { margin: 0 0 8px; font-size: 28px; }
+      p { margin: 0 0 16px; line-height: 1.6; color: #374151; }
+      .row { display: grid; gap: 12px; margin-bottom: 16px; }
+      input {
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid #d1d5db;
+        padding: 0 14px;
+        font-size: 16px;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      button {
+        height: 44px;
+        padding: 0 18px;
+        border: 0;
+        border-radius: 12px;
+        font-size: 15px;
+        cursor: pointer;
+        background: #111827;
+        color: white;
+      }
+      button.secondary { background: #4b5563; }
+      button:disabled { opacity: 0.55; cursor: not-allowed; }
+      pre {
+        white-space: pre-wrap;
+        word-break: break-word;
+        background: #111827;
+        color: #f9fafb;
+        padding: 16px;
+        border-radius: 14px;
+        min-height: 120px;
+      }
+      .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 16px; }
+      .chip {
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #eef2ff;
+        color: #3730a3;
+        font-size: 13px;
+      }
+      .tip { font-size: 13px; color: #6b7280; margin-top: 8px; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Passkey 无坑版 Demo</h1>
+      <p>前端通过 SDK 调用，底层使用 <code>@simplewebauthn/browser</code> 处理 Base64URL、序列化和浏览器兼容细节。</p>
+      <div class="chips" id="env"></div>
+      <div class="row">
+        <input id="username" placeholder="请输入用户名，例如 maolipeng" value="maolipeng" />
+      </div>
+      <div class="actions">
+        <button id="registerBtn">注册通行密钥</button>
+        <button id="loginBtn" class="secondary">使用通行密钥登录</button>
+      </div>
+      <div class="tip">建议：Mac Safari / Chrome，或 iPhone Safari。首次先注册，再登录。</div>
+      <h3>运行日志</h3>
+      <pre id="log">等待操作...</pre>
+    </div>
+  </body>
+</html>

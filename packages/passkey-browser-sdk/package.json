@@ -1,0 +1,48 @@
+{
+  "name": "@passkey/browser-sdk",
+  "version": "1.0.0",
+  "description": "Passkey 前端 SDK - WebAuthn browser client with event hooks and debug mode",
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/passkey-sdk",
+    "directory": "packages/passkey-browser-sdk"
+  },
+  "keywords": [
+    "passkey",
+    "webauthn",
+    "fido2",
+    "authentication",
+    "browser",
+    "touchid",
+    "faceid"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch"
+  },
+  "dependencies": {
+    "@passkey/sdk-core": "workspace:*",
+    "@simplewebauthn/browser": "^13.1.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "@simplewebauthn/browser": "^13.1.0"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@passkey/sdk-core",
+  "version": "1.0.0",
+  "description": "Passkey SDK 核心类型定义 - TypeScript types, interfaces, and error classes",
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/passkey-sdk",
+    "directory": "packages/passkey-sdk-core"
+  },
+  "keywords": [
+    "passkey",
+    "webauthn",
+    "fido2",
+    "authentication",
+    "typescript",
+    "types"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch"
+  },
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  }
+}
